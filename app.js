@@ -30,3 +30,28 @@ const cards = document.querySelectorAll('.card');
             console.log("cardClicked");
         })
     }
+
+
+    // bahire korce
+    // Discount calculation
+    const applyBtn = document.getElementById('apply-btn').addEventListener('click', function () {
+        const inputField = document.getElementById('input-field').value;
+        const couponCode = inputField.split(' ').join(' ').toUpperCase().trim();
+        
+        console.log(couponCode);
+
+         if(couponCode === 'SELL 200'){
+             if(currentPrice >= 200){
+                 const discountPrice = document.getElementById('discountPrice');
+                 const discount = 0.2 * currentPrice;
+                 discountPrice.innerText = discount.toFixed(2)
+
+
+                 // Total Calculations
+                 const total = document.getElementById('total');
+                 const totalCalculation = currentPrice - discount;
+                 total.innerText = totalCalculation.toFixed(2)
+
+             }
+         }
+     });

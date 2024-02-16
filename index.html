@@ -49,9 +49,11 @@
               <div
                 class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center justify-center"
               >
-
-              <!-- Card1 Kitchenware -->
-                <div id="k-item1" class="text-center card bg-white py-4 rounded-md">
+                <!-- Card1 Kitchenware -->
+                <div
+                  id="k-item1"
+                  class="text-center card bg-white py-4 rounded-md"
+                >
                   <img
                     class="mx-auto bg-slate-200 px-16 py-6"
                     src="Images/Kitchenware/spon.png"
@@ -86,7 +88,9 @@
                         class="mask mask-star-2 bg-orange-400"
                       />
                     </div>
-                    <h3 id="k-title" class="text-2xl font-bold">K. Accessories</h3>
+                    <h3 id="k-title" class="text-2xl font-bold">
+                      K. Accessories
+                    </h3>
                     <span id="price" class="text-slate-500">$ 39.00</span>
                   </div>
                 </div>
@@ -172,7 +176,6 @@
                     <span class="text-slate-500">$ 99.00</span>
                   </div>
                 </div>
-
               </div>
             </div>
 
@@ -451,7 +454,8 @@
                 </div>
               </div>
               <div class="my-8 p-4 bg-white rounded-md">
-                <div id="title-container"></div>
+                <div id="title-container">
+                </div>
                 <hr class="my-4" />
                 <p class="text-xl font-bold py-2">
                   Total Price: $<span id="totalPrice"></span>
@@ -464,9 +468,24 @@
                   Total: $<span id="total"></span>
                 </p>
                 <hr class="my-4" />
-                <button class="btn btn-wide bg-[#F11A7B] text-white">
-                  Make Purchase
-                </button>
+
+                <!-- Make Purchase -->
+                <button id="purchase-btn" class="btn btn-wide bg-[#F11A7B] text-white">Make Purchase</button>
+                <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+                    <div class="modal-box bg-white text-center">
+                        <div class="size-28 mx-auto">
+                            <img src="Images/Green-check-mark-icon.png" alt=""></div>
+                      <h3 class="font-bold text-4xl text-black">Congratulations</h3>
+                      <p class="py-4">You Purchases the product</p>
+                      <div class="mt-4">
+                        <form method="dialog">
+                          <!-- if there is a button in form, it will close the modal -->
+                          <button class="btn bg-[#F11A7B] text-white">Go Home</button>
+                        </form>
+                      </div>
+                    </div>
+                  </dialog>
+                <!-- Make Purchase ends-->
               </div>
             </div>
           </div>

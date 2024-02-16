@@ -12,8 +12,9 @@ let currentPrice = 0;
             
             // Create a element
             const p = document.createElement('p');
+           const pTitle = p.setAttribute('id', 'p-title');
             serialNUmber++;
-            p.innerText = serialNUmber + '. ' + cardTitle;
+            p.innerText = serialNUmber + '. ' + cardTitle
             titleContainer.appendChild(p);
 
 
@@ -25,30 +26,34 @@ let currentPrice = 0;
             currentPrice += priceNumber;
 
             const totalPrice = document.getElementById('totalPrice');
-                totalPrice.innerText = currentPrice
-
-                const total = document.getElementById('total');
-                total.innerText = currentPrice
+                totalPrice.innerText = currentPrice.toFixed(2)
 
                 // Discount calculation
                 const applyBtn = document.getElementById('apply-btn').addEventListener('click', function () {
                    const inputField = document.getElementById('input-field').value;
-                    if(inputField === 'SELL 200'){
+                   const couponCode = inputField.split(' ').join(' ').toUpperCase().trim();
+
+                    if(couponCode === 'SELL 200'){
                         if(currentPrice >= 200){
                             const discountPrice = document.getElementById('discountPrice');
-                            const discountCalculate = 0.2 * currentPrice;
-                            const discount =  Math.round(discountCalculate)
-                            discountPrice.innerText = discount
+                            const discount = 0.2 * currentPrice;
+                            discountPrice.innerText = discount.toFixed(2)
         
         
                             // Total Calculations
                             const total = document.getElementById('total');
                             const totalCalculation = currentPrice - discount;
-                            total.innerText = totalCalculation
+                            total.innerText = totalCalculation.toFixed(2)
         
                         }
                     }
                 });
+
+                const purchases = document.getElementById('purchase-btn').addEventListener('click', function(){
+                    const myModel = document.getElementById('my_modal_5')
+                    myModel.showModal()
+                })
+                
                
         })
     }
